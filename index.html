@@ -1,24 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="i Click Photography - Premium Wedding, Event and Portrait Photography">
+  <title>i Click Photography</title>
 
-<section id="contact" class="contact">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-<h2>Contact i Click Photography</h2>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #ffffff;
+      line-height: 1.6;
+    }
 
-<p>
-For bookings and enquiries, contact us today.
-</p>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.95);
+      border-bottom: 1px solid #b99a52;
+      padding: 16px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-<a href="#" class="btn">
-WhatsApp
-</a>
+    .logo {
+      color: #d4af37;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-</section>
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
 
+    nav a:hover {
+      color: #d4af37;
+    }
 
-<footer>
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(circle at center, #252015 0%, #080808 55%, #000000 100%);
+    }
 
-© 2026 i Click Photography
+    .hero h1 {
+      font-size: clamp(42px, 9vw, 90px);
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
 
-</footer>
+    .hero h2 {
+      font-size: clamp(20px, 4vw, 34px);
+      letter-spacing: 5px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #cccccc;
+      max-width: 650px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 13px 28px;
+      background: #d4af37;
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+    }
+
+    section {
+      padding: 75px 7%;
+      text-align: center;
+    }
+
+    .title {
+      color: #d4af37;
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      color: #bbbbbb;
+      margin-bottom: 35px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: #121212;
+      border: 1px solid #3a321f;
+      padding: 30px 20px;
+      border-radius: 14px;
+    }
+
+    .card h3 {
+      color: #d4af37;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #bbbbbb;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .gallery div {
+      height: 230px;
+      border: 1px solid #3a321f;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #191919, #080808);
+      color: #777777;
+    }
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
+      background: #111111;
+      border: 1px solid #3a321f;
+      padding: 35px 20px;
+      border-radius: 15px;
+    }
+
+    .contact-box p {
+      color: #cccccc;
+      margin: 10px 0;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: #ffffff;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      background: #000000;
+      border-top: 1px solid #292929;
+      color: #888888;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">i Click Photography</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div>
+      <h1>i Click</h1>
+      <h2>PHOTOGRAPHY</h2>
+      <p>
+        Capturing beautiful moments, emotions and memories
+        that last a lifetime.
+      </p>
+
+      <a class="btn" href="#contact">Book Your Event</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="title">About i Click Photography</h2>
+    <p class="subtitle">
+      Professional photography and event services with a creative cinematic touch.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>
+          To turn your special moments into timeless photographs.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Our Style</h3>
+        <p>
+          Natural emotions, creative compositions and premium storytelling.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Our Promise</h3>
+        <p>
+          Professional service and beautiful memories for every occasion.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="title">Our Services</h2>
+    <p class="subtitle">Photography & Event Services</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Wedding Photography</h3>
+        <p>Beautifully capture every emotion and unforgettable wedding moment.</p>
+      </div>
+
+      <div class="card">
+        <h3>Pre-Wedding</h3>
+        <p>Creative cinematic pre-wedding photography and storytelling.</p>
+      </div>
+
+      <div class="card">
+        <h3>Events</h3>
+        <p>Professional photography for birthdays, parties and special events.</p>
+      </div>
+
+      <div class="card">
+        <h3>Portraits</h3>
+        <p>Professional portraits for personal and professional needs.</p>
+      </div>
+
+      <div class="card">
+        <h3>Photo & Video</h3>
+        <p>Complete photo and video coverage for your important occasions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Event Organization</h3>
+        <p>Creative event planning and coordination for memorable celebrations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 class="title">Our Gallery</h2>
+    <p class="subtitle">
+      Your photographs will be displayed here.
+    </p>
+
+    <div class="gallery">
+      <div>Photo 01</div>
+      <div>Photo 02</div>
+      <div>Photo 03</div>
+      <div>Photo 04</div>
+      <div>Photo 05</div>
+      <div>Photo 06</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="title">Contact i Click Photography</h2>
+
+    <div class="contact-box">
+      <p>For bookings and enquiries, contact us today.</p>
+
+      <p>
+        📸 Professional Photography & Event Services
+      </p>
+
+      <a
+        class="btn whatsapp"
+        href="https://wa.me/"
+        target="_blank">
+        WhatsApp Us
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 i Click Photography. All Rights Reserved.
+  </footer>
 
 </body>
 </html>
