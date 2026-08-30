@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="i Click Photography - Premium Wedding, Event and Portrait Photography">
-  <title>i Click Photography</title>
+  <meta name="keywords" content="i Click Photography, Wedding Photography, Event Photography, Portrait Photography, Photo Video">
+  <meta name="author" content="i Click Photography">
+
+  <title>i Click Photography | Your Moments. Our Signature Clicks.</title>
 
   <style>
     * {
@@ -21,6 +25,7 @@
       line-height: 1.6;
     }
 
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
@@ -40,17 +45,37 @@
       letter-spacing: 1px;
     }
 
+    /* DESKTOP NAVIGATION */
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
     nav a {
       color: #ffffff;
       text-decoration: none;
       margin-left: 18px;
       font-size: 14px;
+      transition: 0.3s;
     }
 
     nav a:hover {
       color: #d4af37;
     }
 
+    /* HAMBURGER BUTTON */
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: #d4af37;
+      font-size: 30px;
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+
+    /* HERO */
     .hero {
       min-height: 90vh;
       display: flex;
@@ -74,13 +99,36 @@
       margin-bottom: 20px;
     }
 
-    .hero p {
+    .hero > div > p {
       color: #cccccc;
       max-width: 650px;
       margin: auto;
       font-size: 17px;
     }
 
+    /* HERO VALUES */
+    .hero-values {
+      max-width: 700px;
+      margin: 30px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .hero-values p {
+      color: #cccccc;
+      font-size: 14px;
+      padding: 12px 8px;
+      border-left: 1px solid #3a321f;
+      border-right: 1px solid #3a321f;
+    }
+
+    .hero-values strong {
+      color: #d4af37;
+      font-size: 16px;
+    }
+
+    /* BUTTON */
     .btn {
       display: inline-block;
       margin-top: 30px;
@@ -90,8 +138,15 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 30px;
+      transition: 0.3s;
     }
 
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* SECTIONS */
     section {
       padding: 75px 7%;
       text-align: center;
@@ -108,6 +163,7 @@
       margin-bottom: 35px;
     }
 
+    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -132,6 +188,14 @@
       color: #bbbbbb;
     }
 
+    /* SERVICE HEADINGS */
+    .service-heading {
+      color: #d4af37;
+      font-size: 24px;
+      margin: 35px 0 20px;
+    }
+
+    /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -140,23 +204,42 @@
       margin: auto;
     }
 
-    .gallery div {
-      height: 230px;
+    .gallery-card {
+      min-height: 230px;
       border: 1px solid #3a321f;
       border-radius: 12px;
+      overflow: hidden;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
+      position: relative;
       background: linear-gradient(135deg, #191919, #080808);
-      color: #777777;
     }
-.gallery-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-}
+
+    .gallery-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .gallery-card span {
+      color: #d4af37;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin: 10px 0 3px;
+    }
+
+    .gallery-card h3 {
+      color: #ffffff;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    /* CONTACT */
     .contact-box {
       max-width: 750px;
       margin: auto;
@@ -176,6 +259,7 @@
       color: #ffffff;
     }
 
+    /* FOOTER */
     footer {
       padding: 25px;
       text-align: center;
@@ -185,19 +269,85 @@
       font-size: 14px;
     }
 
+    /* MOBILE MENU */
     @media (max-width: 700px) {
+
       header {
+        flex-direction: row;
+        padding: 14px 5%;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.98);
+        border-bottom: 1px solid #b99a52;
+
+        display: none;
         flex-direction: column;
-        gap: 10px;
+        align-items: stretch;
+        padding: 10px 0;
+      }
+
+      nav.active {
+        display: flex;
       }
 
       nav a {
-        margin: 0 7px;
-        font-size: 12px;
+        margin: 0;
+        padding: 14px 20px;
+        text-align: center;
+        font-size: 15px;
+        border-bottom: 1px solid #292929;
+      }
+
+      nav a:last-child {
+        border-bottom: none;
       }
 
       .hero {
         min-height: 80vh;
+        padding: 40px 15px;
+      }
+
+      .hero-values {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        margin-top: 25px;
+      }
+
+      .hero-values p {
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #3a321f;
+        padding: 10px;
+      }
+
+      .hero-values p:last-child {
+        border-bottom: none;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .title {
+        font-size: 30px;
+      }
+
+      .cards,
+      .gallery {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -205,10 +355,15 @@
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <div class="logo">i Click Photography</div>
 
-    <nav>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav id="mainNav">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -217,222 +372,308 @@
     </nav>
   </header>
 
+  <!-- HOME -->
   <section class="hero" id="home">
-  <div>
-    <h1>i Click</h1>
-    <h2>PHOTOGRAPHY</h2>
+    <div>
 
-    <p>
-      Capturing beautiful moments, emotions and memories
-      that last a lifetime.
+      <h1>i Click</h1>
+
+      <h2>PHOTOGRAPHY</h2>
+
+      <p>
+        Capturing beautiful moments, emotions and memories
+        that last a lifetime.
+      </p>
+
+      <div class="hero-values">
+
+        <p>
+          <strong>🤝 Commitment</strong><br>
+          Dedicated to Every Moment.
+        </p>
+
+        <p>
+          <strong>✦ Quality</strong><br>
+          Excellence in Every Frame.
+        </p>
+
+        <p>
+          <strong>♢ Trust</strong><br>
+          Your Memories, Our Responsibility.
+        </p>
+
+      </div>
+
+      <a class="btn" href="#contact">Book Your Event</a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <h2 class="title">About i Click Photography</h2>
+
+    <p class="subtitle">
+      Professional Photography & Event Services with a creative cinematic touch.
     </p>
 
-    <div class="hero-values">
+    <div class="cards">
 
-  <p>
-    <strong>🤝 Commitment</strong><br>
-    Dedicated to Every Moment.
-  </p>
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>
+          To turn every special moment into timeless photographs and meaningful
+          memories that you can cherish for a lifetime.
+        </p>
+      </div>
 
-  <p>
-    <strong>✦ Quality</strong><br>
-    Excellence in Every Frame.
-  </p>
+      <div class="card">
+        <h3>Our Style</h3>
+        <p>
+          We combine natural emotions, creative compositions, cinematic visuals
+          and professional storytelling to make every photograph unique.
+        </p>
+      </div>
 
-  <p>
-    <strong>♢ Trust</strong><br>
-    Your Memories, Our Responsibility.
-  </p>
+      <div class="card">
+        <h3>Our Promise</h3>
+        <p>
+          We focus on quality, creativity and professional service while
+          capturing the genuine emotions and unforgettable moments of every
+          occasion.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>What We Do</h3>
+        <p>
+          Wedding, Pre-Wedding, Post-Wedding, Portrait, Event, Devotional,
+          Educational and Corporate Photography, along with Photo & Video
+          services and Event Organization.
+        </p>
+      </div>
 
     </div>
 
-    <a class="btn" href="#contact">Book Your Event</a>
-  </div>
   </section>
 
-  <section id="about">
-  <h2 class="title">About i Click Photography</h2>
-
-  <p class="subtitle">
-    Professional Photography & Event Services with a creative cinematic touch.
-  </p>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>Our Vision</h3>
-      <p>
-        To turn every special moment into timeless photographs and meaningful
-        memories that you can cherish for a lifetime.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Our Style</h3>
-      <p>
-        We combine natural emotions, creative compositions, cinematic visuals
-        and professional storytelling to make every photograph unique.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Our Promise</h3>
-      <p>
-        We focus on quality, creativity and professional service while
-        capturing the genuine emotions and unforgettable moments of every
-        occasion.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>What We Do</h3>
-      <p>
-        Wedding, Pre-Wedding, Post-Wedding, Portrait, Event, Devotional,
-        Educational and Corporate Photography, along with Photo & Video
-        services and Event Organization.
-      </p>
-    </div>
-
-  </div>
-  </section>
+  <!-- SERVICES -->
   <section id="services">
-  <h2 class="title">Our Services</h2>
-  <p class="subtitle">Professional Photography & Event Services</p>
 
-  <h3 class="service-heading">Photography Services</h3>
+    <h2 class="title">Our Services</h2>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Wedding Photography</h3>
-      <p>Beautifully capture every emotion and unforgettable wedding moment.</p>
+    <p class="subtitle">
+      Professional Photography & Event Services
+    </p>
+
+    <h3 class="service-heading">Photography Services</h3>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Wedding Photography</h3>
+        <p>
+          Beautifully capture every emotion and unforgettable wedding moment.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Pre-Wedding Photography</h3>
+        <p>
+          Creative cinematic photography and storytelling for your pre-wedding memories.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Post-Wedding Photography</h3>
+        <p>
+          Preserve the beautiful moments and memories after your wedding day.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Portrait Photography</h3>
+        <p>
+          Professional portraits for personal, creative and professional needs.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Photo & Video</h3>
+        <p>
+          Complete professional photo and video coverage for your important occasions.
+        </p>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>Pre-Wedding Photography</h3>
-      <p>Creative cinematic photography and storytelling for your pre-wedding memories.</p>
+    <h3 class="service-heading">Event Services</h3>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Event Photography</h3>
+        <p>
+          Professional photography for celebrations, parties and special events.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Birthday & Family Functions</h3>
+        <p>
+          Capture precious family moments, birthdays and memorable celebrations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Devotional Events</h3>
+        <p>
+          Professional coverage of devotional programs, spiritual gatherings and celebrations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Educational Events</h3>
+        <p>
+          Photography and video coverage for schools, colleges, seminars and educational programs.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Corporate Events</h3>
+        <p>
+          Professional coverage for meetings, conferences, launches and corporate celebrations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Event Organization</h3>
+        <p>
+          Creative event planning and coordination for memorable celebrations and occasions.
+        </p>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>Post-Wedding Photography</h3>
-      <p>Preserve the beautiful moments and memories after your wedding day.</p>
-    </div>
-
-    <div class="card">
-      <h3>Portrait Photography</h3>
-      <p>Professional portraits for personal, creative and professional needs.</p>
-    </div>
-
-    <div class="card">
-      <h3>Photo & Video</h3>
-      <p>Complete professional photo and video coverage for your important occasions.</p>
-    </div>
-  </div>
-
-  <h3 class="service-heading">Event Services</h3>
-
-  <div class="cards">
-    <div class="card">
-      <h3>Event Photography</h3>
-      <p>Professional photography for celebrations, parties and special events.</p>
-    </div>
-
-    <div class="card">
-      <h3>Birthday & Family Functions</h3>
-      <p>Capture precious family moments, birthdays and memorable celebrations.</p>
-    </div>
-
-    <div class="card">
-      <h3>Devotional Events</h3>
-      <p>Professional coverage of devotional programs, spiritual gatherings and celebrations.</p>
-    </div>
-
-    <div class="card">
-      <h3>Educational Events</h3>
-      <p>Photography and video coverage for schools, colleges, seminars and educational programs.</p>
-    </div>
-
-    <div class="card">
-      <h3>Corporate Events</h3>
-      <p>Professional coverage for meetings, conferences, launches and corporate celebrations.</p>
-    </div>
-
-    <div class="card">
-      <h3>Event Organization</h3>
-      <p>Creative event planning and coordination for memorable celebrations and occasions.</p>
-    </div>
-  </div>
   </section>
+
+  <!-- GALLERY -->
   <section id="gallery">
+
     <h2 class="title">Our Gallery</h2>
+
     <p class="subtitle">
       Your photographs will be displayed here.
     </p>
 
     <div class="gallery">
-  <div class="gallery-card">
-   <img src="gallery/RJS00753.JPG" alt="Wedding Photography"> <span>WEDDING</span>
-    <h3>Wedding Stories</h3>
-  </div>
 
-  <div class="gallery-card">
-    <span>PRE-WEDDING</span>
-    <h3>Pre-Wedding Moments</h3>
-  </div>
+      <div class="gallery-card">
+        <img src="gallery/RJS00753.JPG" alt="Wedding Photography">
+        <span>WEDDING</span>
+        <h3>Wedding Stories</h3>
+      </div>
 
-  
+      <div class="gallery-card">
+        <span>PRE-WEDDING</span>
+        <h3>Pre-Wedding Moments</h3>
+      </div>
 
-  <div class="gallery-card">
-    <span>PORTRAITS</span>
-    <h3>Portrait Collection</h3>
-  </div>
-<div class="gallery-card">
-  <img src="gallery/DSC01121.JPG" alt="Portrait Photography">
-  <span>PORTRAITS</span>
-  <h3>Portrait Photography</h3>
-</div>
-  <div class="gallery-card">
-  <img src="gallery/DSC04260.JPG" alt="Celebration Photography">
-  <span>CELEBRATIONS</span>
-  <h3>Beautiful Memories</h3>
-</div>
+      <div class="gallery-card">
+        <span>PORTRAITS</span>
+        <h3>Portrait Collection</h3>
+      </div>
 
-  <div class="gallery-card">
-  <img src="gallery/192388.jpg" alt="i Click Photography">
-  <span>i CLICK</span>
-  <h3>Photography Stories</h3>
-</div>
+      <div class="gallery-card">
+        <img src="gallery/DSC01121.JPG" alt="Portrait Photography">
+        <span>PORTRAITS</span>
+        <h3>Portrait Photography</h3>
+      </div>
+
+      <div class="gallery-card">
+        <img src="gallery/DSC04260.JPG" alt="Celebration Photography">
+        <span>CELEBRATIONS</span>
+        <h3>Beautiful Memories</h3>
+      </div>
+
+      <div class="gallery-card">
+        <img src="gallery/192388.jpg" alt="i Click Photography">
+        <span>i CLICK</span>
+        <h3>Photography Stories</h3>
+      </div>
+
     </div>
+
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
-  <h2 class="title">Contact i Click Photography</h2>
 
-  <p class="subtitle">
-    Ready to capture your special moments? Contact us for bookings and enquiries.
-  </p>
+    <h2 class="title">Contact i Click Photography</h2>
 
-  <div class="contact-box">
-    <p>📸 Professional Photography & Event Services</p>
-    <p>💍 Weddings • Pre-Weddings • Post-Weddings • Events • Birthdays • Family Functions • Devotional • Educational • Corporate • Portraits • Photo & Video</p>
-    <p>📱 WhatsApp: 9705020888</p>
+    <p class="subtitle">
+      Ready to capture your special moments? Contact us for bookings and enquiries.
+    </p>
 
-    <a
-      class="btn whatsapp"
-      href="https://wa.me/919705020888?text=Hello%20i%20Click%20Photography%2C%20I%20would%20like%20to%20book%20your%20photography%20services."
-      target="_blank">
-      WhatsApp for Booking
-    </a>
-  <a
-  class="btn"
-  href="tel:9705020888">
-  📞 Call Now
-</a>
-  </div>
-</section>
+    <div class="contact-box">
 
+      <p>📸 Professional Photography & Event Services</p>
+
+      <p>
+        💍 Weddings • Pre-Weddings • Post-Weddings • Events • Birthdays •
+        Family Functions • Devotional • Educational • Corporate • Portraits •
+        Photo & Video
+      </p>
+
+      <p>📱 WhatsApp: 9705020888</p>
+
+      <a
+        class="btn whatsapp"
+        href="https://wa.me/919705020888?text=Hello%20i%20Click%20Photography%2C%20I%20would%20like%20to%20book%20your%20photography%20services."
+        target="_blank">
+        WhatsApp for Booking
+      </a>
+
+      <a
+        class="btn"
+        href="tel:9705020888">
+        📞 Call Now
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     © 2026 i Click Photography. All Rights Reserved.
   </footer>
+
+  <!-- MOBILE MENU SCRIPT -->
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector("#mainNav");
+    const navLinks = document.querySelectorAll("#mainNav a");
+
+    menuToggle.addEventListener("click", function () {
+      mainNav.classList.toggle("active");
+
+      const isOpen = mainNav.classList.contains("active");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+  </script>
 
 </body>
 </html>
